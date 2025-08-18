@@ -1,31 +1,99 @@
+/*--------------------------------
+
+Icons Embedded icon font
+Generated using nucleoapp.com
+
+-------------------------------- */
+
+$icon-emb-font-path: "/styles/fonts" !default;
+
 @font-face {
-    font-family: "Icons Embedded";
-    src: url("/styles/fonts/icons.eot");
-    src: url("/styles/fonts/icons.eot") format("embedded-opentype"), url("/styles/fonts/icons.woff2") format("woff2"),
-         url("/styles/fonts/icons.woff") format("woff"), url("/styles/fonts/icons.ttf") format("truetype"),
-         url("/styles/fonts/icons.svg") format("svg");
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Icons Embedded';
+  src: url('#{$icon-emb-font-path}/icons.eot');
+  src: url('#{$icon-emb-font-path}/icons.eot') format('embedded-opentype'),
+       url('#{$icon-emb-font-path}/icons.woff2') format('woff2'),
+       url('#{$icon-emb-font-path}/icons.woff') format('woff'),
+       url('#{$icon-emb-font-path}/icons.ttf') format('truetype'),
+       url('#{$icon-emb-font-path}/icons.svg') format('svg');
 }
 
+/* base class */
 .icon-emb {
-    display: inline-block;
-    font-family: "Icons Embedded";
-    font-style: normal;
-    font-weight: normal;
-    font-size: 1em;
-    vertical-align: middle;
-    speak: none;
-    text-transform: none;
-    /* Better Font Rendering */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  font: normal normal normal 1em/1 'Icons Embedded';
+  color: inherit;
+  flex-shrink: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-emb.icon-emb-menu-8::before {
-    content: "\ea05";
+/* size examples - relative units */
+.icon-emb-sm {
+  font-size: 0.8em;
 }
 
-.icon-emb.icon-emb-simple-remove::before {
-    content: "\ea06";
+.icon-emb-lg {
+  font-size: 1.2em;
+}
+
+/* size examples - absolute units */
+.icon-emb-16 {
+  font-size: 16px;
+}
+
+.icon-emb-32 {
+  font-size: 32px;
+}
+
+/* rotate the icon infinitely */
+.icon-emb-is-spinning {
+  animation: icon-emb-spin 1s infinite linear;
+}
+
+@keyframes icon-emb-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* transform */
+.icon-emb-rotate-90  {
+	transform: rotate(90deg);
+}
+
+.icon-emb-rotate-180 {
+	transform: rotate(180deg);
+}
+
+.icon-emb-rotate-270 {
+	transform: rotate(270deg);
+}
+
+.icon-emb-flip-y {
+	transform: scaleY(-1);
+}
+
+.icon-emb-flip-x {
+	transform: scaleX(-1);
+}
+
+/* icons */
+$icons: (
+  'menu-8': 'ea05',
+  'simple-remove': 'ea06',
+  'ctrl-right': 'ea08',
+  'zoom': 'ea09',
+);
+
+@function unicode($str) {
+  @return unquote("\"\\#{$str}\"");
+}
+
+@each $name, $code in $icons {
+  .icon-emb-#{""+$name}::before {
+    content: unicode($code);
+  }
 }
