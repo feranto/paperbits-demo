@@ -1,0 +1,12 @@
+{
+    "name": "Codespaces Node.js Starter",
+    "extensions": [
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+		"humao.rest-client"
+    ],
+    "dockerFile": "Dockerfile",
+    "settings": {
+        "terminal.integrated.shell.linux": "/usr/bin/zsh",
+    }
+}

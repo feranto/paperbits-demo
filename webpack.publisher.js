@@ -20,8 +20,8 @@ const publisherConfig = {
         filename: "./[name].js",
         path: path.resolve(__dirname, "dist/publisher")
     },
-    externals: {
-        "firebase-admin": "firebase-admin"
+    externals: { 
+        "firebase-admin": "require(\"firebase-admin\")" 
     },
     module: {
         rules: [
