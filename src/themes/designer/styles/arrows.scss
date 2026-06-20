@@ -1,6 +1,8 @@
-﻿@import "animation.scss";
-@import "variables.scss";
-@media (min-width: $breakpoint-lg) {
+﻿@use "animation.scss";
+@use "variables.scss";
+@use "mixins";
+
+@media (min-width: variables.$breakpoint-lg) {
     .arrow-self {
         background-image: data-uri("../svgs/arrow.svg");
         background-size: auto 80%;
@@ -11,8 +13,8 @@
         height: 150px;
     }
     .arrow {
-        @include no-pointer-events;
-        @include animation-shake;
+        @include mixins.no-pointer-events;
+        @include animation.animation-shake;
         position: absolute;
         font-family: Segoe Script;
         font-size: 20px;

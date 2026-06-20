@@ -1,4 +1,4 @@
-﻿@import "variables.scss";
+﻿@use "variables.scss";
 @mixin hide-text() {
   text-indent: -9999px;
   white-space: nowrap;
@@ -56,21 +56,21 @@
     background-position: bottom left, bottom right, top left, top right;
     background-repeat: no-repeat;
     background-size: $size;
-    z-index: $z-index-selection;
+    z-index: variables.$z-index-selection;
     content: '';
   }
 }
 @mixin surface() {
    @include box-shadow(1px 1px 20px 1px rgba(0, 0, 0, 0.15));
   margin: 0;
-  background-color: $toolbox-background;
-  border-radius: $toolbox-border-radius;
-  font-family: $font-family-base;
-  font-weight: $font-weight-base;
-  z-index: $z-index-base;
+  background-color: variables.$toolbox-background;
+  border-radius: variables.$toolbox-border-radius;
+  font-family: variables.$font-family-base;
+  font-weight: variables.$font-weight-base;
+  z-index: variables.$z-index-base;
   list-style: none;
   user-select: none;
-  font-size: $font-size-base;
+  font-size: variables.$font-size-base;
 }
 @mixin pseudo-transparent-bckg {
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAA3NCSVQICAjb4U/gAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACuoAAArqAVDM774AAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzbovLKMAAAANElEQVQ4T2P8DwQMeMDr16+hLOyACUqTDUYNGAwGML569QpvOhAVFYWysIPRQBwGBjAwAABDVwrY3ACsDwAAAABJRU5ErkJggg==");
@@ -82,10 +82,10 @@
 }
 
 @mixin slider-thumb {
-    width: $form-control-slider-thumb-size;
-    height: $form-control-slider-thumb-size;
-    background: $form-control-slider-thumb-bg;
-    border: 2px solid $form-control-border;
+    width: variables.$form-control-slider-thumb-size;
+    height: variables.$form-control-slider-thumb-size;
+    background: variables.$form-control-slider-thumb-bg;
+    border: 2px solid variables.$form-control-border;
     cursor: pointer;
     cursor: -webkit-grabbing;
     user-select: none;

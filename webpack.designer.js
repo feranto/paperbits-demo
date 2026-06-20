@@ -33,7 +33,7 @@ const designerConfig = {
                             postcssOptions: { plugins: [["autoprefixer", { sourceMap: true, minimize: true }]] }
                         }
                     },
-                    { loader: "sass-loader" }
+                    { loader: "sass-loader", options: { api: "modern" } }
                 ]
             },
             {

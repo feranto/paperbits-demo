@@ -1,13 +1,15 @@
-﻿@import "variables.scss";
-@import "buttons.scss";
+﻿@use "variables.scss";
+@use "buttons.scss";
+@use "mixins";
+
 
 
 .tools-paragraph-style {
-    @include tabable();
+    @include mixins.tabable();
     display: block;
     padding: 5px 10px;
     text-decoration: none;
-    color: $color-base;
+    color: variables.$color-base;
 }
 
 .tools-paragraph-style {

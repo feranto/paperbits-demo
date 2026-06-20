@@ -1,3 +1,5 @@
+@use "mixins";
+
 .snippet-grid {
   display: grid;
   grid-template-columns: repeat(12, 10px);
@@ -12,7 +14,7 @@
 
   &:hover,
   &:focus {
-    @include selection(15px, -5px);
+    @include mixins.selection(15px, -5px);
     cursor: pointer;
   }
 }

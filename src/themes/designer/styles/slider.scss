@@ -1,4 +1,4 @@
-@import "variables.scss";
+@use "variables.scss";
 
 .slider-display {
     width: 100%; 
@@ -13,6 +13,6 @@
     .slider-thumb {
         @include slider-thumb();
         position: absolute; 
-        transform: translate(-$form-control-slider-thumb-size / 2, -$form-control-slider-thumb-size / 2);
+        transform: translate(-(variables.$form-control-slider-thumb-size) / 2, -(variables.$form-control-slider-thumb-size) / 2);
     }
 }

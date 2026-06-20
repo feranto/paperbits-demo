@@ -1,4 +1,4 @@
-@import "mixins.scss";
+@use "mixins.scss";
 html,
 body {
     width: 100%;
@@ -9,13 +9,13 @@ body {
 }
 
 * {
-    @include box-sizing(border-box);
+    @include mixins.box-sizing(border-box);
     position: relative;
 }
 
 *:before,
 *:after {
-    @include box-sizing(border-box);
+    @include mixins.box-sizing(border-box);
 }
 
 // Reset fonts for relevant elements

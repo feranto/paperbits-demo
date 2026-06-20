@@ -1,16 +1,18 @@
-﻿@import "variables.scss";
-@import "mixins.scss";
-@import "animation.scss";
+﻿@use "variables.scss";
+@use "mixins.scss";
+@use "animation.scss";
+@use "icons-toolboxes.scss";
+@use "spinners.scss";
 
 .toasts {
     position: fixed;
     right: 40px;
     bottom: 50px;
-    z-index: $z-index-popup;
+    z-index: variables.$z-index-popup;
 
     .toast {
-        @include surface();
-        @include animation-fadein();
+        @include mixins.surface();
+        @include animation.animation-fadein();
         display: flex;
 
         align-items: center;
@@ -27,7 +29,7 @@
                     content: "";
                     width: 10px;
                     height: 10px;
-                    border: 2px solid $color-base;
+                    border: 2px solid variables.$color-base;
                     border-radius: 50%;
                     float: left;
                     transform: scale(0);

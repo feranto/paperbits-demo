@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "../variables";
+
 @mixin fit($spacing: 0) {
     top: $spacing;
     left: $spacing;
@@ -29,15 +32,15 @@
         text-align: center;
     }
 }
-@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
-    $min: map-get($breakpoints, $name);
+@function breakpoint-min($name, $breakpoints: variables.$grid-breakpoints) {
+    $min: map.get($breakpoints, $name);
     @return if($min != 0, $min, null);
 }
-@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
+@function breakpoint-infix($name, $breakpoints: variables.$grid-breakpoints) {
      @return if(breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
 }
-@each $breakpoint in map-keys($grid-breakpoints) {
-    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+@each $breakpoint in map.keys(variables.$grid-breakpoints) {
+    $infix: breakpoint-infix($breakpoint, variables.$grid-breakpoints);
 
     .align-horizontally#{$infix}-left {
         text-align: left;

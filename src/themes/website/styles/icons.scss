@@ -5,6 +5,8 @@ Generated using nucleoapp.com
 
 -------------------------------- */
 
+@use "sass:string";
+
 $icon-emb-font-path: "/styles/fonts" !default;
 
 @font-face {
@@ -89,7 +91,7 @@ $icons: (
 );
 
 @function unicode($str) {
-  @return unquote("\"\\#{$str}\"");
+  @return string.unquote("\"\\#{$str}\"");
 }
 
 @each $name, $code in $icons {

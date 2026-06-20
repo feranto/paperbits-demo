@@ -1,8 +1,8 @@
-﻿@import "variables.scss";
-@import "icons-toolboxes.scss";
-@import "mixins.scss";
-@import "animation.scss";
-@import "flex.scss";
+﻿@use "variables.scss";
+@use "icons-toolboxes.scss";
+@use "mixins.scss";
+@use "animation.scss";
+@use "flex.scss";
 
 
 .workshop {
@@ -29,8 +29,8 @@
                 right: 0;
                 width: 1px;
                 border: 0;
-                background: $workshop-journey-step-border-color;
-                background: radial-gradient($workshop-journey-step-border-color, white);
+                background: variables.$workshop-journey-step-border-color;
+                background: radial-gradient(variables.$workshop-journey-step-border-color, white);
             }
         }
 
@@ -51,7 +51,7 @@
 }
 
 .toolbox.workshops-container {
-    z-index: $z-index-base;
+    z-index: variables.$z-index-base;
     min-height: 370px;
 
     .journey-container {
@@ -61,7 +61,7 @@
 
 .workshop {
     padding: 10px;
-    @media (min-width: $breakpoint-lg) {
+    @media (min-width: variables.$breakpoint-lg) {
         width: 80%;
     }
 }

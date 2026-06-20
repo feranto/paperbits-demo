@@ -1,17 +1,17 @@
-﻿@import "animation.scss";
-@import "variables.scss";
-@import "mixins.scss";
+﻿@use "animation.scss";
+@use "variables.scss";
+@use "mixins.scss";
 
 $tip-width: 10px;
 
 .balloon {
-    @include surface();
-    @include animation-fadein(0.3s);
+    @include mixins.surface();
+    @include animation.animation-fadein(0.3s);
     position: fixed;
-    background-color: $balloon-background;
-    z-index: $z-index-balloon;
-    box-shadow: $balloon-shadow;
-    border-radius: $toolbox-border-radius;
+    background-color: variables.$balloon-background;
+    z-index: variables.$z-index-balloon;
+    box-shadow: variables.$balloon-shadow;
+    border-radius: variables.$toolbox-border-radius;
     padding: 7px;
     display: none;
 
@@ -22,12 +22,12 @@ $tip-width: 10px;
 
 .balloon-tip {
     position: fixed;
-    background-color: $balloon-background;
+    background-color: variables.$balloon-background;
     width: $tip-width;
     height: $tip-width;
-    z-index: $z-index-balloon;
+    z-index: variables.$z-index-balloon;
     box-shadow: -2px -2px 2px rgba(0, 0, 0, 0.15);
-    @include animation-fadein(0.3s);
+    @include animation.animation-fadein(0.3s);
 
     &.balloon-top {
         transform: rotate(45deg);
